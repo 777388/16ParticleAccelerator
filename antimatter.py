@@ -18,13 +18,13 @@ if __name__ =="__main__":
                 t4.start()
                 while True:
                         t1 = t4
-                        print("t4", end="\r", flush=True)
+                        print(" t4", end="\r", flush=True)
                         t2 = t3
-                        print("t3", end="\r", flush=True)
+                        print(" t3", end="\r", flush=True)
                         t4 = t1
-                        print("t1", end="\r", flush=True)
+                        print(" t1", end="\r", flush=True)
                         t3 = t2
-                        print("t2", end="\r", flush=True)
+                        print(" t2", end="\r", flush=True)
         t5 = threading.Thread(target=knot)
         t6 = threading.Thread(target=knot)
         t7 = threading.Thread(target=knot)
