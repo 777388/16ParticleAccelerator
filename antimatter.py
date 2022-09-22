@@ -18,7 +18,7 @@ def sigint_handler(signal, frame):
     global store2
     global store3
     print("")
-    if store == "" or store1 == "" or store2 == "" or store3 == "":
+    if str(store) == "" or str(store1) == "" or str(store2) == "" or str(store3) == "":
         print("Uncertainty Multiverse")
     else:
         print(str(store)+"----"+str(store1)+" "+str(store2)+" "+str(store3))
