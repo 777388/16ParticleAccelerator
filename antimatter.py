@@ -38,13 +38,26 @@ def electron(currentposition, lastposition, start, dend):
                 print(" -----"+str(dend), end="\r", flush=True)
                 store = start
                 store1 = lastposition
+def electron2(currentposition, lastposition, start, dend):
+        global store
+        global store1
+        currentposition = start
+        lastposition = dend
+        while True:
+                
+                print(start, end="\r", flush=True)
+                lastposition = currentposition
+                currentposition = lastposition
+                print(" -----"+str(dend), end="\r", flush=True)
+                store = start
+                store1 = lastposition
 def knot(dimension):
         global store2
         global store3
         t1 = threading.Thread(target=electron, args=(1,2,1,2))
-        t2 = threading.Thread(target=electron, args=(3,4,3,4))
+        t2 = threading.Thread(target=electron2, args=(3,4,3,4))
         t3 = threading.Thread(target=electron, args=(5,6,5,6))
-        t4 = threading.Thread(target=electron, args=(7,8,7,8))
+        t4 = threading.Thread(target=electron2, args=(7,8,7,8))
         t1.start()
         t2.start()
         t3.start()
