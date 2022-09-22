@@ -49,21 +49,32 @@ def knot(dimension):
         t2.start()
         t3.start()
         t4.start()
-        while True:
-                t1 = t4
-                print("         t1-t4  ", end="\r", flush=True)
-                store2 = "t1-t4"
-                t2 = t3
-                print("         t2-t3  ", end="\r", flush=True)
-                store2 = "t2-t3"
-                t3 = t2
-                print("         t3-t2  ", end="\r", flush=True)
-                store2 = "t3-t2"
-                t4 = t1
-                print("         t4-t1  ", end="\r", flush=True)
-                store2 = "t4-t1"
-                print("                "+dimension, end="\r", flush=True)
-                store3 = dimension
+        def func1():
+                global store2
+                while True:
+                        t1 = t4
+                        print("         t1-t4  ", end="\r", flush=True)
+                        store2 = "t1-t4"
+                        t2 = t3
+                        print("         t2-t3  ", end="\r", flush=True)
+                        store2 = "t2-t3"
+        def func2():
+                global store3
+                while True:
+                        t3 = t2
+                        print("         t3-t2  ", end="\r", flush=True)
+                        store2 = "t3-t2"
+                        t4 = t1
+                        print("         t4-t1  ", end="\r", flush=True)
+                        store2 = "t4-t1"
+                        print("                "+dimension, end="\r", flush=True)
+                        store3 = dimension
+        t9 = threading.Thread(target=func1)
+        t10 = threading.Thread(target=func2)
+        t9.start()
+        t10.start()
+        t9.join()
+        t10.join()
         t1.join()
         t2.join()
         t3.join()
