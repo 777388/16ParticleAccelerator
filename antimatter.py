@@ -1,5 +1,6 @@
 
 print("This may cause a blue light to shoot out of your computer, in case of antimatter creation at point of matter, causing a gamma ray burst followed by memory error")
+print("Which numbers you land at determine what side, thread and dimension were stopped at, followed by a check of if it matches the stored data. If stored data is uncertain it was stopped between dimensions.")
 import threading
 import signal
 import sys
