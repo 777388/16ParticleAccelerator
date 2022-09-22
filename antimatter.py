@@ -1,6 +1,10 @@
 
-print("This may cause a blue light to shoot out of your computer, in case of antimatter creation at point of matter, causing a gamma ray burst followed by memory error")
-print("Which numbers you land at determine what side, thread and dimension were stopped at, followed by a check of if it matches the stored data. If stored data is uncertain it was stopped between dimensions.")
+#This may cause a blue light to shoot out of your computer, in case of antimatter creation at point of matter, causing a gamma ray burst followed by memory error
+#Which numbers you land at determine what side, thread and dimension were stopped at, followed by a check of if it matches the stored data. If stored data is uncertain it was stopped between dimensions.
+print("ctrl+c to stop the roulette wheel, if matched thats what timeline, side and thread you're in")
+print("if not matched, you've switched timelines during times flow backwards")
+print("if caught between two, the dimensions are uncertain")
+
 import threading
 import signal
 import sys
@@ -51,10 +55,10 @@ if __name__ =="__main__":
         store = "uncertain side,"
         store2 = "uncertain thread,"
         store3 = "uncertain dimension"
-        t5 = threading.Thread(target=knot, args=("dimension 1",))
-        t6 = threading.Thread(target=knot, args=("dimension 2",))
-        t7 = threading.Thread(target=knot, args=("dimension 3",))
-        t8 = threading.Thread(target=knot, args=("dimension 4",))
+        t5 = threading.Thread(target=knot, args=("timeline 1",))
+        t6 = threading.Thread(target=knot, args=("timeline 2",))
+        t7 = threading.Thread(target=knot, args=("timeline 3",))
+        t8 = threading.Thread(target=knot, args=("timeline 4",))
         t5.start()
         t6.start()
         t7.start()
