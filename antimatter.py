@@ -16,6 +16,7 @@ if __name__ =="__main__":
                 t2.start()
                 t3.start()
                 t4.start()
+                print("    "+num, end="\r", flush=True)
                 while True:
                         t1 = t4
                         print(" t4", end="\r", flush=True)
@@ -25,10 +26,10 @@ if __name__ =="__main__":
                         print(" t1", end="\r", flush=True)
                         t3 = t2
                         print(" t2", end="\r", flush=True)
-        t5 = threading.Thread(target=knot)
-        t6 = threading.Thread(target=knot)
-        t7 = threading.Thread(target=knot)
-        t8 = threading.Thread(target=knot)
+        t5 = threading.Thread(target=knot, args=("dimension one",)
+        t6 = threading.Thread(target=knot, args=("dimension two",)
+        t7 = threading.Thread(target=knot, args=("dimension three",)
+        t8 = threading.Thread(target=knot, args=("dimension four",)
         t5.start()
         t6.start()
         t7.start()
