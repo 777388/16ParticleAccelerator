@@ -15,39 +15,41 @@ def sigint_handler(signal, frame):
     sys.exit(0)
 signal.signal(signal.SIGINT, sigint_handler)
 
-def electron(currentposition, lastposition):
+def electron(currentposition, lastposition, start, dend):
+        currentposition = start
+        lastposition = dend
         while True:
                 
-                print(currentposition, end="\r", flush=True)
+                print(start, end="\r", flush=True)
                 currentposition = lastposition
                 lastposition = currentposition
-                print("-----"+str(lastposition), end="\r", flush=True)
+                print(" -----"+str(dend), end="\r", flush=True)
                 store = currentposition
                 store1 = lastposition
 def knot(dimension):
 
-        t1 = threading.Thread(target=electron, args=(1,2))
-        t2 = threading.Thread(target=electron, args=(3,4))
-        t3 = threading.Thread(target=electron, args=(5,6))
-        t4 = threading.Thread(target=electron, args=(7,8))
+        t1 = threading.Thread(target=electron, args=(1,2,1,2))
+        t2 = threading.Thread(target=electron, args=(3,4,3,4))
+        t3 = threading.Thread(target=electron, args=(5,6,5,6))
+        t4 = threading.Thread(target=electron, args=(7,8,7,8))
         t1.start()
         t2.start()
         t3.start()
         t4.start()
         while True:
                 t1 = t4
-                print("       t4", end="\r", flush=True)
+                print("         t1-t4  ", end="\r", flush=True)
                 store2 = "t4"
                 t2 = t3
-                print("       t3", end="\r", flush=True)
+                print("         t2-t3  ", end="\r", flush=True)
                 store2 = "t3"
                 t3 = t2
-                print("       t2", end="\r", flush=True)
+                print("         t3-t2  ", end="\r", flush=True)
                 store2 = "t2"
                 t4 = t1
-                print("       t1", end="\r", flush=True)
+                print("         t4-t1  ", end="\r", flush=True)
                 store2 = "t1"
-                print("           "+dimension, end="\r", flush=True)
+                print("                "+dimension, end="\r", flush=True)
                 store3 = dimension
         t1.join()
         t2.join()
