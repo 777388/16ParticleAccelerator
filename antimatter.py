@@ -8,14 +8,26 @@ print("if caught between two, the dimensions are uncertain")
 import threading
 import signal
 import sys
-
+store = ""
+store1 = ""
+store2 = ""
+store3 = ""
 def sigint_handler(signal, frame):
+    global store
+    global store1
+    global store2
+    global store3
     print("")
-    print(store+"----"+store1+" "+store2+" "+store3)
+    if store == "" or store1 == "" or store2 == "" or store3 == "":
+        print("Uncertainty Multiverse")
+    else:
+        print(str(store)+"----"+str(store1)+" "+str(store2)+" "+str(store3))
     sys.exit(0)
 signal.signal(signal.SIGINT, sigint_handler)
 
 def electron(currentposition, lastposition, start, dend):
+        global store
+        global store1
         currentposition = start
         lastposition = dend
         while True:
@@ -24,10 +36,11 @@ def electron(currentposition, lastposition, start, dend):
                 currentposition = lastposition
                 lastposition = currentposition
                 print(" -----"+str(dend), end="\r", flush=True)
-                store = currentposition
+                store = start
                 store1 = lastposition
 def knot(dimension):
-
+        global store2
+        global store3
         t1 = threading.Thread(target=electron, args=(1,2,1,2))
         t2 = threading.Thread(target=electron, args=(3,4,3,4))
         t3 = threading.Thread(target=electron, args=(5,6,5,6))
@@ -39,16 +52,16 @@ def knot(dimension):
         while True:
                 t1 = t4
                 print("         t1-t4  ", end="\r", flush=True)
-                store2 = "t4"
+                store2 = "t1-t4"
                 t2 = t3
                 print("         t2-t3  ", end="\r", flush=True)
-                store2 = "t3"
+                store2 = "t2-t3"
                 t3 = t2
                 print("         t3-t2  ", end="\r", flush=True)
-                store2 = "t2"
+                store2 = "t3-t2"
                 t4 = t1
                 print("         t4-t1  ", end="\r", flush=True)
-                store2 = "t1"
+                store2 = "t4-t1"
                 print("                "+dimension, end="\r", flush=True)
                 store3 = dimension
         t1.join()
@@ -57,10 +70,6 @@ def knot(dimension):
         t4.join()
 
 if __name__ =="__main__":
-        store = "uncertain side"
-        store1 = "uncertain side,"
-        store2 = "uncertain thread,"
-        store3 = "uncertain timeline"
         t5 = threading.Thread(target=knot, args=("timeline 1",))
         t6 = threading.Thread(target=knot, args=("timeline 2",))
         t7 = threading.Thread(target=knot, args=("timeline 3",))
