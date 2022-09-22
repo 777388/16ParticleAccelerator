@@ -30,3 +30,8 @@ OR
 3------2
 
 1------4
+
+Usage: Python3 antimatter.py
+ctrl+c to stop the roulette wheel, if matched thats what timeline, side and thread you're in
+if not matched, you've switched timelines during times flow backwards
+if caught between two, the dimensions are uncertain"
