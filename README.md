@@ -5,9 +5,8 @@ The theory is that if there are 2 threads, 1 moving an electron from position 1 
 there will be an electron collision imminent moving the 2 electrons away from each other eventually nearing collision, creating antimatter which will
 cause an gamma ray burst if made at matter site, and will cause the electrons to move forwards and backwards in time simultaneously creating an alternate
 universe in which time moves backwards.
-By causing a swap between collision sites brings about the posibility that the two may just cause multiversal transition. That is one electron may move
-backwards and wind up following the course of of the 3rd electron backwards being repelled by the collision of the 4th, as the second electron follows
-the course of the 4th electron backwards being repelled by the force of the 3rd electron
+By causing a swap between collision sites brings about the posibility that the two may just cause multiversal transition. That is the first electron may move backwards and wind up following the course of the 3rd electron backwards being repelled by the collision of the 4th, as the second electron follows
+the course of the 4th electron backwards being repelled by the force of the 3rd electron. The fourth may follow the second path to avoid the first, and the third may follow the first path to avoid the second.
 
 1------2
 
