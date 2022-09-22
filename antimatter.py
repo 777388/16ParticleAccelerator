@@ -4,6 +4,7 @@
 print("ctrl+c to stop the roulette wheel, if matched thats what timeline, side and thread you're in")
 print("if not matched, you've switched timelines during times flow backwards")
 print("if caught between two, the dimensions are uncertain")
+print("if both sides are the same, time flowed backwards")
 
 import threading
 import signal
