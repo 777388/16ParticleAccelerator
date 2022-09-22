@@ -9,20 +9,31 @@ import threading
 import signal
 import sys
 
+start = "uncertain start"
+store = "uncertain side"
+store1 = "uncertain side,"
+store2 = "uncertain thread,"
+store3 = "uncertain timeline"
 def sigint_handler(signal, frame):
     print("")
     print(start+" "+store+"----"+store1+" "+store2+" "+store3)
     sys.exit(0)
 signal.signal(signal.SIGINT, sigint_handler)
 
-def electron(currentposition, lastposition, start):
+
+def electron(currentposition, lastposition, start, i=1):
         while True:
                 print(start, end="\r", flush=True)
                 print("  "+str(currentposition), end="\r", flush=True)
-                currentposition = lastposition
-                lastposition = currentposition
+                if (i%2) == 0:
+                    currentposition=start
+                    store=currentposition
+                    i += 1
+                else:
+                    currentposition = lastposition
+                    lastposition=currentposition
+                    i += 1
                 print("   -----"+str(lastposition), end="\r", flush=True)
-                store = currentposition
                 store1 = lastposition
 def knot(dimension):
 
@@ -55,11 +66,6 @@ def knot(dimension):
         t4.join()
 
 if __name__ =="__main__":
-        start = "uncertain start"
-        store = "uncertain side"
-        store1 = "uncertain side,"
-        store2 = "uncertain thread,"
-        store3 = "uncertain timeline"
         t5 = threading.Thread(target=knot, args=("timeline 1",))
         t6 = threading.Thread(target=knot, args=("timeline 2",))
         t7 = threading.Thread(target=knot, args=("timeline 3",))
