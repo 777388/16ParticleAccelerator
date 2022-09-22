@@ -10,8 +10,8 @@ if __name__ =="__main__":
         def knot():
                 t1 = threading.Thread(target=electron, args=(2,1))
                 t2 = threading.Thread(target=electron, args=(1,2))
-                t3 = threading.Thread(target=electron, args=(2,3))
-                t4 = threading.Thread(target=electron, args=(3,2))
+                t3 = threading.Thread(target=electron, args=(3,4))
+                t4 = threading.Thread(target=electron, args=(4,3))
                 t1.start()
                 t2.start()
                 t3.start()
