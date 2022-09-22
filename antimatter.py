@@ -54,7 +54,7 @@ def knot(dimension):
 if __name__ =="__main__":
         store = "uncertain side,"
         store2 = "uncertain thread,"
-        store3 = "uncertain dimension"
+        store3 = "uncertain timeline"
         t5 = threading.Thread(target=knot, args=("timeline 1",))
         t6 = threading.Thread(target=knot, args=("timeline 2",))
         t7 = threading.Thread(target=knot, args=("timeline 3",))
