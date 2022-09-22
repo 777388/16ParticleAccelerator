@@ -10,13 +10,23 @@ backwards and wind up following the course of of the 3rd electron backwards bein
 the course of the 4th electron backwards being repelled by the force of the 3rd electron
 
 1------2
+
 3------4
+
 SWAP
+
 3------4
+
 1------2
+
 Backwards possibilities
+
 1------4
+
 3------2
+
 OR
+
 3------2
+
 1------4
